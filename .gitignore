@@ -1,0 +1,12 @@
+ass
+*.jar
+*.war
+*.ear
+/bin/
+/target/
+.project
+/.settings/
+.classpath
+*~
+.#*
+.*.swp
