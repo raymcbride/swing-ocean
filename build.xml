@@ -13,11 +13,11 @@
   	Set global properties for top level build.
   	Assumes a directory structure of ...
   	
-  			Root_Dev_Directory/		
-  												|- /src  		** All source code **
-  												|- /classes	** All classes ** 
-  												|- /docs		** API docs **
-  												|- /lib			** All jars can go here **
+  		Root_Dev_Directory/		
+  			|- /src  		** All source code **
+  			|- /classes	    ** All classes ** 
+  			|- /docs		** API docs **
+  			|- /lib			** All jars can go here **
   -->
   
   <property name="Ocean" value="Top Level Build for API"/>
@@ -35,11 +35,11 @@
   
  	
  	
- 		<!-- ===================================================================================== -->
-		<!-- ==================================== Imports ======================================== -->
-		<!-- ===================================================================================== -->
+ 	<!-- ===================================================================================== -->
+	<!-- ==================================== Imports ======================================== -->
+	<!-- ===================================================================================== -->
 		
-		<!-- Import the javac.compiler.classpath options -->
+	<!-- Import the javac.compiler.classpath options -->
   	<import file="ant_build/compiler-options.xml" />
   	
   	<!-- Import the javadoc  options -->
@@ -57,10 +57,10 @@
 	
 	
 	<!-- 
-			All builds dependent upon init creating missing directories
-			- If these directories already exist then nothing will happen.
-			Also create the time stamps - These are global properties that 
-			can be used anywhere within this build 
+		All builds dependent upon init creating missing directories
+		- If these directories already exist then nothing will happen.
+		Also create the time stamps - These are global properties that 
+		can be used anywhere within this build 
 	-->
   <target name="init">
   	<!-- Create the date and time stamps : Use a UK locale -->
@@ -80,11 +80,11 @@
 	
  	
  	<!-- 
- 			Java Compiler target.
- 			This will compile all the src code under the project.src location
- 			into the project.classes directory using the same structure as package names.
- 			If you need to change the settings just change the values in the properties 
- 			defined above for the relevant setting. Please dont change anything here
+ 		Java Compiler target.
+ 		This will compile all the src code under the project.src location
+ 		into the project.classes directory using the same structure as package names.
+ 		If you need to change the settings just change the values in the properties 
+ 		defined above for the relevant setting. Please dont change anything here
  	-->
   <target name="compile" depends="init" description="compile the source " >
   		
@@ -104,10 +104,10 @@
   </target>
   
   
-  <!--
+    <!--
   		The Java Archiver target
   		
-  -->
+    -->
   <target name="archive" depends="compile" description="archive the source" >
 
     <jar 
@@ -123,8 +123,7 @@
   </target>
 
   <target name="clean" description="clean up" >
-    <!-- Delete the ${project.classes} and 
-    all jars-->
+    <!-- Delete the ${project.classes} and all jars-->
     <delete dir="${Package_Class_Root}"/>
     <delete>
 		    <fileset dir="${project.classes}" includes="*.jar"/>
