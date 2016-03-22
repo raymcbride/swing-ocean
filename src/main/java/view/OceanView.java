@@ -17,9 +17,9 @@ public class OceanView extends JPanel implements Observer {
     private int cols;
     private final int HEIGHT = 600;
     private final int WIDTH = 600;
-    private ImageIcon bigFishImage = new ImageIcon("../lib/img/bigfish.png");
-    private ImageIcon littleFishImage = new ImageIcon("../lib/img/littlefish.png");
-    private ImageIcon algaeImage = new ImageIcon("../lib/img/algae.png");
+    private ImageIcon bigFishImage = new ImageIcon(getClass().getResource("/img/bigfish.png"));
+    private ImageIcon littleFishImage = new ImageIcon(getClass().getResource("/img/littlefish.png"));
+    private ImageIcon algaeImage = new ImageIcon(getClass().getResource("/img/algae.png"));
     private Color bgColour = new Color(17,166,203);
     private Color highlight = new Color(14,207,255);
     private Color gridColor = new Color(14,189,233);

@@ -6,6 +6,9 @@ ass
 /target/
 .project
 /.settings/
+/.gradle/
+/.metadata/
+/build/
 .classpath
 *~
 .#*

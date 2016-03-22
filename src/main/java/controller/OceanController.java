@@ -27,8 +27,6 @@ public class OceanController extends JFrame implements Runnable{
     
     public OceanController(){
         super("Ocean Simulation");
-        thread = new Thread(this);
-        delay = 1000;
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch(Exception e) {
@@ -46,9 +44,14 @@ public class OceanController extends JFrame implements Runnable{
         container.add(createControlPanel(), BorderLayout.EAST);
         pack();
         setResizable(false);
-        thread.start();
         setVisible(true);
-    }   
+    }
+
+    private void init(){
+        thread = new Thread(this);
+        delay = 10000;
+        thread.start();
+    }  
 
     public JPanel createControlPanel(){
         controlPanel = new JPanel(new GridLayout(4, 1));
@@ -143,6 +146,7 @@ public class OceanController extends JFrame implements Runnable{
         }
     }
 
+    @Override
     public void run(){
         while(true){
             if(running){	
@@ -154,11 +158,20 @@ public class OceanController extends JFrame implements Runnable{
 	           return;
 	       }
             }
+            else {
+               try{
+	           Thread.sleep(1);	
+	       }
+	       catch(InterruptedException e){
+	           return;
+	       }
+           }
         }
     }
 
     public static void main(String args[]){
         OceanController oceanController = new OceanController();
+        oceanController.init();
     }
 
     private class ControlListener extends AbstractAction implements ActionListener, ChangeListener{ 
