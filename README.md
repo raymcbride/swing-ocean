@@ -8,4 +8,4 @@
 
 ##Run
 
-    jave -jar build/libs/swing-ocean.jar
+    java -jar build/libs/swing-ocean.jar
